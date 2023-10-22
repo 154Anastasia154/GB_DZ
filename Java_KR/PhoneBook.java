@@ -5,13 +5,18 @@ import java.util.HashMap;
 
 class PhoneBook {
     private static HashMap<String, ArrayList<Integer>> phoneBook = new HashMap<>();
+    private ArrayList<Integer> put;
 
+    /**
+     * @param name
+     * @param phoneNum
+     */
     public void add(String name, Integer phoneNum) {
 
         if (!phoneBook.containsKey(name)) {
             ArrayList<Integer> al = new ArrayList<>();
             al.add(phoneNum);
-            phoneBook.put(name, al);
+            put = phoneBook.put(name, al);
         } else {
             if (!phoneBook.get(name).contains(phoneNum)) {
                 ArrayList<Integer> al = new ArrayList<>(phoneBook.get(name));
